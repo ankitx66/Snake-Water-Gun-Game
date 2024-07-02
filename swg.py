@@ -1,40 +1,29 @@
 import random
-'''
-1 for snake
--1 for water 
-0 for gun
-'''
-computer = random.choice([-1, 0, 1])
-youstr = input("Enter your choice: ")
-youDict = {"s": 1, "w": -1, "g": 0}
-reverseDict = {1: "Snake", -1: "Water", 0: "Gun"}
 
-you = youDict[youstr]
+computer = random.choice(["s", "w", "g"])
+you = input("Enter your choice: ")
 
-# By now we have 2 numbers (variables), you and computer
-
-print(f"You chose {reverseDict[you]}\nComputer chose {reverseDict[computer]}")
+print(f" you chose {you} and computer chose {computer}")
 
 if(computer == you):
     print("Its a draw")
-
 else:
-    if(computer ==-1 and you == 1): 
+    if(computer == 'w' and you == 's'): 
         print("You win!")
 
-    elif(computer ==-1 and you == 0):
+    elif(computer == 'w' and you == 'g'):
         print("You Lose!")
 
-    elif(computer == 1 and you == -1):
+    elif(computer == 's' and you == 'w'):
         print("You lose!")
 
-    elif(computer ==1 and you == 0):
+    elif(computer == 's' and you == 'g'):
         print("You Win!")
 
-    elif(computer ==0 and you == -1):
+    elif(computer == 'g' and you == 'w'):
         print("You Win!")
 
-    elif(computer == 0 and you == 1):
+    elif(computer == 'g' and you == 's'):
         print("You Lose!")
 
     else:
